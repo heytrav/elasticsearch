@@ -1,0 +1,36 @@
+{
+  "cluster":{
+    "name": "elasticsearch-k8s"
+  },
+  "node":{
+    "master": false,
+    "data": true
+  },
+  "cloud": {
+    "k8s": {
+      "selector": "component=elasticsearch"
+    }
+  },
+  "discovery": {
+    "type":"io.fabric8.elasticsearch.discovery.k8s.K8sDiscoveryModule",
+    "zen":{
+      "ping": {
+        "multicast":{
+          "enabled": false
+        }
+      }
+    }
+  },
+    "path":{
+        "logs": "/data/log",
+        "data":"/data/data",
+        "plugins":"/data/plugins",
+        "work":"/data/work"
+    },
+    "bootstrap": {
+      "mlockall": true
+    },
+    "http": {
+      "enabled": false
+    }
+}
