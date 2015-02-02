@@ -15,7 +15,15 @@ RUN \
   wget https://download.elasticsearch.org/elasticsearch/elasticsearch/$ES_PKG_NAME.tar.gz && \
   tar xvzf $ES_PKG_NAME.tar.gz && \
   rm -f $ES_PKG_NAME.tar.gz && \
-  mv /$ES_PKG_NAME /elasticsearch
+  mv /$ES_PKG_NAME /elasticsearch && \
+  /elasticsearch/bin/plugin --install \
+    io.fabric8/elasticsearch-cloud-kubernetes/1.0.1 --verbose && \
+  /elasticsearch/bin/plugin --install \
+    mobz/elasticsearch-head && \
+  /elasticsearch/bin/plugin --install \
+    lukas-vlcek/bigdesk
+
+
 
 # Define mountable directories.
 VOLUME ["/data"]
@@ -32,5 +40,4 @@ CMD ["/elasticsearch/bin/elasticsearch"]
 # Expose ports.
 #   - 9200: HTTP
 #   - 9300: transport
-EXPOSE 9200
-EXPOSE 9300
+EXPOSE 9200 9300
