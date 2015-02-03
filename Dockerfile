@@ -15,14 +15,7 @@ RUN \
   wget https://download.elasticsearch.org/elasticsearch/elasticsearch/$ES_PKG_NAME.tar.gz && \
   tar xvzf $ES_PKG_NAME.tar.gz && \
   rm -f $ES_PKG_NAME.tar.gz && \
-  mv /$ES_PKG_NAME /elasticsearch && \
-  /elasticsearch/bin/plugin --install \
-    io.fabric8/elasticsearch-cloud-kubernetes/1.0.1 --verbose && \
-  /elasticsearch/bin/plugin --install \
-    mobz/elasticsearch-head && \
-  /elasticsearch/bin/plugin --install \
-    lukas-vlcek/bigdesk
-
+  mv /$ES_PKG_NAME /elasticsearch
 
 
 # Define mountable directories.
