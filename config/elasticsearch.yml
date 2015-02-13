@@ -17,7 +17,7 @@ discovery:
 path:
   data: /data/data
   logs: /data/log
-  plugins: /elasticsearch/plugins
+  plugins: /data/plugins
   work: /data/work
 
 bootstrap:
