@@ -20,5 +20,5 @@ RUN \
 
 
 
-ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
+ADD config /elasticsearch/config/
 RUN /elasticsearch/bin/plugin --install io.fabric8/elasticsearch-cloud-kubernetes/1.1.0 --verbose
