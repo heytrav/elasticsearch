@@ -6,6 +6,7 @@
 
 # Pull base image.
 FROM dockerfile/java:oracle-java8
+MAINTAINER Travis Holton <travis@ideegeo.com>
 
 ENV ES_PKG_NAME elasticsearch-1.5.1
 
@@ -18,19 +19,6 @@ RUN \
   mv /$ES_PKG_NAME /elasticsearch
 
 
-# Define mountable directories.
-VOLUME ["/data"]
 
-# Mount elasticsearch.yml config
 ADD config/elasticsearch.yml /elasticsearch/config/elasticsearch.yml
-
-# Define working directory.
-WORKDIR /data
-
-# Define default command.
-CMD ["/elasticsearch/bin/elasticsearch"]
-
-# Expose ports.
-#   - 9200: HTTP
-#   - 9300: transport
-EXPOSE 9200 9300
+RUN /elasticsearch/bin/plugin --install io.fabric8/elasticsearch-cloud-kubernetes/1.1.0 --verbose
