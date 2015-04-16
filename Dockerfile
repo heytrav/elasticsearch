@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM quay.io/heytrav/elasticsearch:v0.1.1-base
+FROM quay.io/heytrav/elasticsearch:v0.1.2-base
 
 
 
