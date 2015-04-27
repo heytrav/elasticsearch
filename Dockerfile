@@ -8,7 +8,7 @@
 FROM dockerfile/java:oracle-java8
 MAINTAINER Travis Holton <travis@ideegeo.com>
 
-ENV ES_PKG_NAME elasticsearch-1.5.1
+ENV ES_PKG_NAME elasticsearch-1.5.2
 
 # Install Elasticsearch.
 RUN \
