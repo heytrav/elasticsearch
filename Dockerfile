@@ -6,6 +6,7 @@
 
 # Pull base image.
 FROM quay.io/heytrav/elasticsearch:v0.1.2-base
+MAINTAINER Travis Holton <travis@ideegeo.com>
 
 
 
@@ -21,7 +22,4 @@ WORKDIR /data
 # Define default command.
 CMD ["/elasticsearch/bin/elasticsearch"]
 
-# Expose ports.
-#   - 9200: HTTP
-#   - 9300: transport
 EXPOSE 9200 9300
