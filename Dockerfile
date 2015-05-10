@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM dockerfile/java:oracle-java8
+FROM java:openjdk-8u45-jre
 MAINTAINER Travis Holton <travis@ideegeo.com>
 
 ENV ES_PKG_NAME elasticsearch-1.5.2
