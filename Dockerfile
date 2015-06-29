@@ -8,7 +8,7 @@
 FROM java:openjdk-8u45-jre
 MAINTAINER Travis Holton <travis@ideegeo.com>
 
-ENV ES_PKG_NAME elasticsearch-1.5.2
+ENV ES_PKG_NAME elasticsearch-1.6.0
 
 # Install Elasticsearch.
 RUN \
@@ -21,4 +21,4 @@ RUN \
 
 
 ADD config /elasticsearch/config/
-RUN /elasticsearch/bin/plugin --install io.fabric8/elasticsearch-cloud-kubernetes/1.1.0 --verbose
+RUN /elasticsearch/bin/plugin --install io.fabric8/elasticsearch-cloud-kubernetes/1.2.1 --verbose
