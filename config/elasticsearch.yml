@@ -11,6 +11,7 @@ cloud:
   k8s:
     selector: component=elasticsearch
     service: elasticsearch-discovery
+    namespace: default
 discovery:
 #  type: k8s
   type: io.fabric8.elasticsearch.discovery.k8s.K8sDiscoveryModule
