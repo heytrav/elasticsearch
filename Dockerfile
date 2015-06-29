@@ -1,6 +1,6 @@
 
 # Pull base image.
-FROM quay.io/heytrav/elasticsearch:v0.1.3-base
+FROM quay.io/heytrav/elasticsearch:v0.1.4-base
 MAINTAINER Travis Holton <travis@ideegeo.com>
 
 
